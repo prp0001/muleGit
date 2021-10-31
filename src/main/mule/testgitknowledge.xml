@@ -8,6 +8,8 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="36457b7d-d66c-4ed5-86fa-30e4e5e609d4" >
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
+	<flow name="testgitknowledgeFlow1" doc:id="7fedf852-20f4-4edd-b92b-6bb128afec08" >
+	</flow>
 	<flow name="testgitknowledgeFlow" doc:id="8aa8ed2d-cf69-4cec-9525-873148d4e4ec" >
 		<http:listener doc:name="Listener" doc:id="db2d3855-be24-47e7-90d2-6d03a8bb2c25" config-ref="HTTP_Listener_config" path="/git"/>
 		<ee:transform doc:name="Transform Message" doc:id="180b119d-a6fb-4a5f-a028-5420f3720e78" >
@@ -20,5 +22,6 @@ output application/json
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="d00da3c7-80f1-4022-8175-df30e14b3a3b" message="success"/>
 	</flow>
 </mule>
